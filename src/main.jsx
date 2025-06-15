@@ -1,12 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react';
+import App from './App.jsx';
+import './tailwind.css'; 
+import "./i18n.jsx"
 
-
-createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <React.Suspense fallback="loading">
+      <App />
+    </React.Suspense>
+  </StrictMode>
+);
