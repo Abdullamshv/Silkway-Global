@@ -23,44 +23,44 @@ export default function Home() {
         <div className="relative w-full z-30">
           <NavBar />
         </div>
-        <div className="flex w-full h-full flex-1">
-          <div className="w-1/2 flex flex-col items-start justify-center px-8 md:px-12 lg:px-16 space-y-20 z-20 backdrop-blur-sm">
+        <div className="flex w-full h-full flex-1 flex-col-reverse md:flex-row">
+          <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center px-6 md:px-12 lg:px-16 space-y-10 md:space-y-20 z-20 backdrop-blur-sm text-center md:text-left">
             <div className="space-y-3 font-[Montserrat] select-none">
-              <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl text-[#304BAA] leading-tight">
+              <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#304BAA] leading-snug">
                 {t("home.title1")} <br />
                 {t("home.title2")} <br />
                 {t("home.title3")} <br />
                 {t("home.title4")}
               </h1>
-              <p className="text-lg md:text-xl text-gray-800">
+              <p className="text-base sm:text-lg md:text-xl text-gray-800">
                 {t("home.description.line1")} <br />
                 {t("home.description.line2")} <br />
                 {t("home.description.line3")}
               </p>
             </div>
 
-            <div className="w-auto flex flex-wrap gap-6 font-[Montserrat] text-lg">
+            <div className="flex justify-center md:justify-start">
               <div className="relative">
                 <button
                   onClick={togglePanel}
-                  className="bg-[#304BAA] border-2 border-[#304BAA] text-white px-8 py-4 rounded-xl hover:cursor-pointer hover:bg-white hover:text-[#304BAA] transition-colors font-medium"
+                  className="bg-[#304BAA] border-2 border-[#304BAA] text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl hover:cursor-pointer hover:bg-white hover:text-[#304BAA] transition-colors font-medium"
                 >
                   {t("home.button")}
                 </button>
                 <img
                   src={arrow}
                   alt="arrow"
-                  className="absolute right-0 translate-x-10 bottom-0 translate-y-14 h-full"
+                  className="absolute right-0 translate-x-8 sm:translate-x-10 bottom-0 translate-y-12 sm:translate-y-14 h-full"
                 />
               </div>
             </div>
           </div>
 
-          <div className="relative w-1/2 h-full z-10">
+          <div className="relative w-full md:w-1/2 h-64 sm:h-96 md:h-auto flex justify-center items-center z-10">
             <img
               src={main_image}
               alt="home_image"
-              className="hidden sm:block w-full h-full object-contain"
+              className="w-4/5 sm:w-full h-full object-contain"
             />
           </div>
         </div>
@@ -77,4 +77,3 @@ export default function Home() {
     </>
   );
 }
-

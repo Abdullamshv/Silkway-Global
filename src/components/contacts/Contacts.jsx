@@ -11,57 +11,51 @@ export default function Contacts() {
   const { t } = useTranslation();
 
   return (
-    <div className="py-6 bg-[#D1E8FF] font-[Montserrat] w-full max-h-screen flex justify-center items-start">
-      <div className="bg-[#A8D6FF] rounded-2xl w-4/5 flex flex-col">
-        <div className="rounded-xl w-full h-full flex justify-between">
-          <div className="flex items-center justify-center w-2/3">
-            <h1 className="text-4xl font-bold text-[#304BAA]">
+    <div className="py-6 bg-[#D1E8FF] font-[Montserrat] w-full flex justify-center items-start">
+      <div className="bg-[#A8D6FF] rounded-2xl w-full max-w-7xl sm:px-8 py-8 flex flex-col gap-8">
+        {/* Верхний блок */}
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+          {/* Заголовок */}
+          <div className="text-center lg:text-left">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#304BAA]">
               Silkway Global <br /> {t("contacts.title")}
             </h1>
           </div>
-          <div className="w-1/4 flex flex-col items-center justify-center">
-            <div className="flex flex-row justify-evenly w-1/2 scale-160 py-3">
-              <a
-                href="https://wa.me/77715993843"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={whatsapp} alt="whatsapp" />
+
+          {/* Контактная информация */}
+          <div className="flex flex-col items-center gap-4 text-center">
+            {/* Иконки соц. сетей */}
+            <div className="flex justify-center gap-4">
+              <a href="https://wa.me/77715993843" target="_blank" rel="noopener noreferrer">
+                <img src={whatsapp} alt="whatsapp" className="w-6 sm:w-8" />
               </a>
-              <a
-                href="https://www.instagram.com/silkway_global1?igsh=cmVuZDVyb3ZkenQ3"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={instagram} alt="instagram" />
+              <a href="https://www.instagram.com/silkway_global1?igsh=cmVuZDVyb3ZkenQ3" target="_blank" rel="noopener noreferrer">
+                <img src={instagram} alt="instagram" className="w-6 sm:w-8" />
               </a>
-              <a
-                href="https://www.linkedin.com/company/silkwayglobal"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={linkedin} alt="linkedin" />
+              <a href="https://www.linkedin.com/company/silkwayglobal" target="_blank" rel="noopener noreferrer">
+                <img src={linkedin} alt="linkedin" className="w-6 sm:w-8" />
               </a>
-              <a
-                href="https://youtube.com/@silkwayglobal?si=xF254FpEQxSRcyHx"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={youtube} alt="youtube" />
+              <a href="https://youtube.com/@silkwayglobal?si=xF254FpEQxSRcyHx" target="_blank" rel="noopener noreferrer">
+                <img src={youtube} alt="youtube" className="w-6 sm:w-8" />
               </a>
             </div>
 
-            <div className="text-[#304BAA] text-2xl flex flex-col hover:cursor-default text-center">
+            {/* Адрес */}
+            <div className="text-[#304BAA] text-base sm:text-xl font-medium hover:cursor-default">
               <p>{t("contacts.addressLabel")}</p>
               <p>{t("contacts.address")}</p>
             </div>
-            <div className="flex text-2xl hover:cursor-default items-center">
-              <img src={phone} alt="phone" className="scale-150 mx-3" />
+
+            {/* Телефон */}
+            <div className="flex items-center gap-2 text-[#304BAA] text-base sm:text-xl hover:cursor-default">
+              <img src={phone} alt="phone" className="w-6 h-6" />
               <a>{t("contacts.phone")}</a>
             </div>
           </div>
         </div>
-        <div className="h-full w-full">
+
+        {/* Локация (карта) */}
+        <div className="w-full">
           <Location />
         </div>
       </div>

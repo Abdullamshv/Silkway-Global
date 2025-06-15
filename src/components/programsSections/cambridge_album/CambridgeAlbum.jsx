@@ -22,6 +22,7 @@ import Malaysia6 from "../../../assets/cambridge_album/malaysia/malaz6.png";
 
 export default function CountryAlbum() {
   const { country = "uk" } = useParams();
+  const current = country.toLowerCase();
 
   const albums = {
     uk: {
@@ -46,9 +47,9 @@ export default function CountryAlbum() {
     },
   };
 
-  const album = albums[country.toLowerCase()] || albums["uk"];
-  const isCzechia = country.toLowerCase() === "czechia";
-  const isMalaysia = country.toLowerCase() === "malaysia";
+  const album = albums[current] || albums["uk"];
+  const isCzechia = current === "czechia";
+  const isMalaysia = current === "malaysia";
 
   return (
     <div className="bg-[#D1E8FF] py-8 w-full">
@@ -58,8 +59,8 @@ export default function CountryAlbum() {
             <div className="w-full md:w-1/4">
               <img
                 src={album.left}
-                alt="Left image"
-                className="w-full h-auto rounded-lg object-cover"
+                alt="Left"
+                className="w-full h-full rounded-lg object-cover max-h-[400px]"
               />
             </div>
             <div className="w-full md:w-3/4 flex flex-col gap-4">
@@ -75,8 +76,8 @@ export default function CountryAlbum() {
                       <img
                         key={index}
                         src={img}
-                        alt={`Czechia bottom ${index + 1}`}
-                        className="w-full sm:w-1/3 h-auto object-contain rounded-lg"
+                        alt={`Czechia ${index + 1}`}
+                        className="w-full sm:w-1/3 h-auto object-cover rounded-lg max-h-[200px]"
                       />
                     ))}
                   </div>
@@ -88,15 +89,15 @@ export default function CountryAlbum() {
                       <img
                         key={index}
                         src={img}
-                        alt={`Top image ${index + 1}`}
-                        className="w-full sm:w-1/3 h-auto max-h-[160px] object-fit rounded-lg"
+                        alt={`UK ${index + 1}`}
+                        className="w-full sm:w-1/3 h-auto object-cover max-h-[160px] rounded-lg"
                       />
                     ))}
                   </div>
                   <img
                     src={album.bottom}
-                    alt="Bottom image"
-                    className="w-full h-auto max-h-[300px] object-fit rounded-lg"
+                    alt="Bottom UK"
+                    className="w-full h-auto object-cover max-h-[300px] rounded-lg"
                   />
                 </>
               )}
@@ -108,7 +109,7 @@ export default function CountryAlbum() {
               <img
                 key={index}
                 src={img}
-                alt={`Malaysia image ${index + 1}`}
+                alt={`Malaysia ${index + 1}`}
                 className="w-full h-auto max-h-[220px] object-cover rounded-xl"
               />
             ))}

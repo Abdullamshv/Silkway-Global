@@ -18,23 +18,27 @@ export default function Colleges({ country = "uk" }) {
   const logo = logos[country];
 
   return (
-    <div className="bg-[#D1E8FF] h-[400px] max-h-screen w-full font-[Montserrat] flex items-center justify-center gap-6 hover:cursor-default">
-      <div className="rounded-2xl h-[300px] px-6 bg-[#A8D6FF] flex flex-col items-center justify-between w-[500px]">
-        <h1 className="rounded-2xl text-center w-[400px] bg-[#1B3EC4] py-2 mt-2 text-white text-2xl">
+    <section className="bg-[#D1E8FF] w-full font-[Montserrat] py-10 px-4 flex flex-col lg:flex-row items-center justify-center gap-6">
+      {/* Logo Card */}
+      <div className="bg-[#A8D6FF] rounded-2xl w-full max-w-md flex flex-col items-center justify-between p-6 text-center">
+        <h1 className="bg-[#1B3EC4] text-white text-xl sm:text-2xl font-bold rounded-xl px-4 py-2 mb-4 w-full">
           {t("colleges.title")}
         </h1>
-        <img src={logo} alt={country} className="mx-auto my-auto scale-150" />
+        <img src={logo} alt={country} className="h-24 object-contain" />
       </div>
 
-      <div className="rounded-2xl h-[300px] py-3 px-6 my-3 bg-[#A8D6FF] flex flex-col justify-between w-[500px]">
-        <h1 className="rounded-2xl text-center w-[300px] m-auto bg-[#1B3EC4] mt-2 text-2xl text-white">
+      {/* Feedback Card */}
+      <div className="bg-[#A8D6FF] rounded-2xl w-full max-w-md flex flex-col justify-between p-6 text-center">
+        <h1 className="bg-[#1B3EC4] text-white text-xl sm:text-2xl font-bold rounded-xl px-4 py-2 mb-4 w-full">
           {t("colleges.feedbackTitle")}
         </h1>
-        <p className="text-center w-3/4 m-auto text-xl">
+        <p className="text-lg sm:text-xl text-[#000000] mb-4">
           "{feedback.text}"
         </p>
-        <p className="text-end text-xs whitespace-pre-line">{feedback.author}</p>
+        <p className="text-sm text-right text-gray-700 whitespace-pre-line">
+          {feedback.author}
+        </p>
       </div>
-    </div>
+    </section>
   );
 }

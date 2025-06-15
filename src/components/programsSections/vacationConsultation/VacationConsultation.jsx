@@ -15,35 +15,37 @@ export default function VacationConsultation() {
 
   return (
     <>
-      <div className="bg-[#D1E8FF] font-[Montserrat] min-h-screen w-full flex flex-col items-center">
-        <h1 className="title text-center">
+      <section className="bg-[#D1E8FF] font-[Montserrat] w-full py-12 px-4 flex flex-col items-center">
+        <h1 className="title text-center mb-10">
           {t("vacation.titleLine1")} <br /> {t("vacation.titleLine2")}
         </h1>
-        <div className="flex w-full items-start">
+
+        <div className="flex flex-col lg:flex-row items-center gap-10 w-full max-w-6xl">
           <img
             src={airportImage}
             alt="Airport"
-            className="w-1/2 object-contain rounded-xl"
+            className="w-full lg:w-1/2 h-auto object-cover rounded-xl shadow-md"
           />
 
-          <div className="w-1/2 flex flex-col items-start justify-center gap-8 px-8 py-12">
-            <p className="text-4xl font-medium text-[#1D1D1D]">
+          <div className="w-full lg:w-1/2 flex flex-col items-start justify-center gap-6">
+            <p className="text-2xl sm:text-3xl font-medium text-[#1D1D1D]">
               {t("vacation.description")}
             </p>
             <img
               src={arrow}
               alt="arrow"
-              className="rotate-180 scale-300"
+              className="rotate-180 w-10 sm:w-12"
             />
             <button
               onClick={togglePanel}
-              className="bg-[#304BAA] border-2 border-[#304BAA] text-white text-4xl ml-6 px-6 py-3 rounded-xl hover:cursor-pointer hover:bg-white hover:text-[#304BAA] transition-colors font-medium"
+              className="bg-[#304BAA] border-2 border-[#304BAA] text-white text-xl sm:text-2xl px-6 py-3 rounded-xl hover:bg-white hover:text-[#304BAA] transition-colors"
             >
               {t("vacation.button")}
             </button>
           </div>
         </div>
-      </div>
+      </section>
+
       {isPanelOpen && <ConsultForm closePanel={() => setIsPanelOpen(false)} />}
     </>
   );
