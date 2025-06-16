@@ -24,7 +24,7 @@ export default function Colleges({ country = "uk" }) {
         <h1 className="bg-[#1B3EC4] text-white text-xl sm:text-2xl font-bold rounded-xl px-4 py-2 mb-4 w-full">
           {t("colleges.title")}
         </h1>
-        <img src={logo} alt={country} className="h-24 object-contain" />
+        <img src={logo} alt={country} className="h-24 object-contain w-full scale-130" />
       </div>
 
       {/* Feedback Card */}

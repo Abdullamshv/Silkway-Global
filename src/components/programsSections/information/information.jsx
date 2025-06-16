@@ -18,7 +18,7 @@ export default function Information() {
   return (
     <section className="bg-[#D1E8FF] py-12 w-full font-[Montserrat] flex justify-center">
       <div className="bg-[#A8D6FF] w-11/12 max-w-7xl rounded-xl py-8 px-6 flex flex-col items-center">
-        <h1 className="bg-[#1B3EC4] text-white text-2xl font-bold text-center rounded-xl px-6 py-2 mb-8">
+        <h1 className="bg-[#1B3EC4] text-white text-3xl font-bold text-center rounded-xl px-6 py-2 mb-8">
           {t("information.title")}
         </h1>
 
@@ -28,15 +28,8 @@ export default function Information() {
             return (
               <div
                 key={index}
-                className={`text-white p-4 rounded-2xl shadow-md text-center text-sm sm:text-base whitespace-pre-line break-words ${gradientClass}`}
+                className={`text-white p-4 rounded-2xl font-bold shadow-md text-center text-3xl  whitespace-pre-line break-words ${gradientClass}`}
               >
-                {item.image && (
-                  <img
-                    src={item.image}
-                    alt={item.text}
-                    className="w-10 h-10 mx-auto mb-3 object-contain"
-                  />
-                )}
                 {item.text}
               </div>
             );
