@@ -55,7 +55,7 @@ export default function Contacts() {
         </div>
 
         {/* Локация (карта) */}
-        <div className="w-full">
+        <div className="w-full px-4 sm:px-0">
           <Location />
         </div>
       </div>

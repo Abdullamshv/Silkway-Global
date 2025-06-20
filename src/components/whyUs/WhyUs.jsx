@@ -16,7 +16,7 @@ export default function WhyUs() {
       </h1>
 
       {/* Сетка карточек */}
-      <div className="mx-auto max-w-7xl  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+      <div className="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 px-2">
         {WhyUsData.map((item) => (
           <div
             key={item.id}
@@ -26,7 +26,7 @@ export default function WhyUs() {
               {item.textKeys.map((key, index) => (
                 <div
                   key={index}
-                  className="font-extrabold text-2xl sm:text-3xl  leading-snug"
+                  className="font-extrabold text-xl lg:text-3xl  leading-snug"
                 >
                   {t(key)}
                 </div>

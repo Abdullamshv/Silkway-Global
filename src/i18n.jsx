@@ -13,8 +13,8 @@ i18n
       ru: { translation: ru },
       kk: { translation: kk },
     },
-    lng: localStorage.getItem("i18nextLng") || "en",
-    fallbackLng: "en",
+    lng: localStorage.getItem("i18nextLng") || "kk",
+    fallbackLng: "kk",
     interpolation: {
       escapeValue: false,
     },
